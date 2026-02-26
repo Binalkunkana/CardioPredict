@@ -1,0 +1,18 @@
+# Virtual environments
+ml_project_env/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model checkpoints (optional if you don't want them)
+*checkpoint*
