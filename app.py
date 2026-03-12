@@ -570,7 +570,7 @@ def generate_report_pdf(inputs: dict, prob: float, label: str) -> bytes:
                   "It is NOT a clinical diagnosis. Always seek the advice of a qualified physician.")
     pdf.multi_cell(0, 5, disclaimer, align="C")
     
-    return bytes(pdf.output())
+    return pdf.output()
 
 
 # ─────────────────────────────────────────────────────────────────
