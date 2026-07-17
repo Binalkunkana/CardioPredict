@@ -1,0 +1,20 @@
+name: Keep Streamlit Awake
+
+on:
+  schedule:
+    - cron: '0 */10 * * *'  # Runs every 10 hours to beat the 12-hour sleep timer
+  workflow_dispatch:      # Gives you a manual run button
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Create Empty Commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Chore: Reset Streamlit inactivity timer"
+          git push origin main
